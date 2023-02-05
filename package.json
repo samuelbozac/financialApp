@@ -11,16 +11,17 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "eslint-config-custom": "*",
+    "husky": "^8.0.3",
     "prettier": "latest",
     "turbo": "latest"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
   "packageManager": "npm@6.14.15"
 }
