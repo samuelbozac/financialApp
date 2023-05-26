@@ -8,7 +8,7 @@ interface BaseLayout {
 
 export const BaseLayout: React.FC<BaseLayout> = ({ children }): JSX.Element => {
   return (
-    <div>
+    <div style={{ height: '100vh' }}>
       <Navbar />
       {children}
       <Footer />

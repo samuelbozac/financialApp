@@ -1,5 +1,6 @@
 import React from 'react';
+// import {Footer} from '@mui/material'
 
 export const Footer = () => {
-  return <div>Footer</div>;
+  return <div></div>;
 };
