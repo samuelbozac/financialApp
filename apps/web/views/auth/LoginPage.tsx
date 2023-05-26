@@ -1,7 +1,15 @@
 import React from 'react';
 import { BaseLayout } from '../../layout/BaseLayout';
-import { Grid, InputLabel, Input } from '@mui/material';
+import {
+  Grid,
+  InputLabel,
+  OutlinedInput,
+  TextField,
+  InputAdornment,
+  IconButton,
+} from '@mui/material';
 import styled from 'styled-components';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,6 +19,16 @@ const Wrapper = styled.div`
 `;
 
 export const LoginPage = () => {
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
+  };
+
   return (
     <BaseLayout>
       <Grid
@@ -25,8 +43,36 @@ export const LoginPage = () => {
         <Wrapper>
           <Grid item xs={4}>
             <InputLabel>Login</InputLabel>
-            <Input title="username" placeholder="username" />
-            <Input title="password" placeholder="password" type="password" />
+            {/* <Input title="username" placeholder="username" /> */}
+            <TextField
+              placeholder="username"
+              title="username"
+              variant="outlined"
+              size="small"
+            />
+            {/* <Input title="password" placeholder="password" type="password" /> */}
+            {/* <InputLabel htmlFor="outlined-adornment-password">
+              Password
+            </InputLabel> */}
+            <OutlinedInput
+              id="outlined-adornment-password"
+              type={showPassword ? 'text' : 'password'}
+              placeholder="password"
+              size="small"
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              label="Password"
+            />
           </Grid>
         </Wrapper>
         <Grid item xs={4}></Grid>
