@@ -1,10 +1,5 @@
-import { Button } from 'ui';
+import { Layout } from '../layout/Layout';
 
 export default function Web() {
-  return (
-    <div>
-      <h1>Web</h1>
-      <Button />
-    </div>
-  );
+  return <div>Landing Page</div>;
 }
